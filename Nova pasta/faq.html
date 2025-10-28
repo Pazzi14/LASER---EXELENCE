@@ -9,12 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_GA4_ID"></script>
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_GA4_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-SEU_GA4_ID'); 
+    </script>
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'SEU_PIXEL_ID'); // SUBSTITUIR PELO SEU ID DO FACEBOOK PIXEL
+      fbq('track', 'PageView');
     </script>
 </head>
 <body>
@@ -141,4 +153,5 @@
         });
     </script>
 </body>
+
 </html>
