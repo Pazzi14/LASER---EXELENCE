@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Avaliação | Laser Excellence</title>
+    <meta name="description" content="Preencha o formulário para solicitar sua avaliação com a Enfermeira Marcela Molinaro para Laserterapia ou Feridas Crônicas em São Paulo.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_GA4_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEU_GA4_ID'); 
+    </script>
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'SEU_PIXEL_ID'); // SUBSTITUIR PELO SEU ID DO FACEBOOK PIXEL
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logotipo.png" alt="Laser Excellence - Voltar para Home" style="max-height: 40px;">
+        </a>
+        <nav>
+            <ul class="menu-desktop">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tratamentos.html">Protocolos</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html" class="btn-agendar">Agendar Avaliação</a></li>
+            </ul>
+            <button class="menu-mobile-btn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contato-secao" class="secao-padrao">
+            <h1 class="titulo-secao" data-scroll-reveal>Solicite Sua Avaliação Especializada</h1>
+            <p class="subtitulo-secao" data-scroll-reveal>Preencha o formulário para iniciarmos seu agendamento. Retornaremos em até 1 hora útil.</p>
+
+            <div class="formulario-agendamento-secao">
+                <div class="formulario-container" data-scroll-reveal-origin="left">
+                    <form action="https://formspree.io/f/SEU_FORMSPREE_ENDPOINT" method="POST" 
+                          onsubmit="return handleFormSubmission(event, 'Avaliacao_Solicitada_Contato');">
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="Nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp (Com DDD)</label>
+                            <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(11) 99999-9999" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motivo">Motivo da Consulta</label>
+                            <select id="motivo" name="Motivo da Consulta" required>
+                                <option value="" disabled selected>Selecione o seu foco de tratamento</option>
+                                <option value="Feridas Cronicas">Tratamento de Feridas Crônicas (Úlceras, Pé Diabético)</option>
+                                <option value="Laser Estetica">Laserterapia Estética (Tatuagem, Micose, Manchas)</option>
+                                <option value="ILIB">Terapia ILIB Sistêmica (Bem-estar, Imunidade, Dor)</option>
+                                <option value="Outros">Outro Motivo / Dúvida Geral</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem (Opcional)</label>
+                            <textarea id="mensagem" name="Mensagem" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-principal-btn bg-azul-profundo">Solicitar Avaliação</button>
+                        
+                        <p class="aviso-lgpd">Ao enviar, você concorda com nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+                    </form>
+                </div>
+
+                <div class="contato-info" data-scroll-reveal-origin="right">
+                    <h3>Fale Conosco Diretamente</h3>
+                    <p><i class="fab fa-whatsapp"></i> **WhatsApp:** (11) 98765-4321</p>
+                    <p><i class="fas fa-map-marker-alt"></i> **Localização:** São Paulo - Atendimento Presencial com hora marcada.</p>
+                    <p><i class="fas fa-envelope"></i> **E-mail:** contato@laserexcellence.com.br</p>
+                    
+                    <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20laserterapia." 
+                        class="cta-principal-btn bg-verde-menta" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                    </a>
+
+                    <div class="mapa-placeholder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.485124119965!2d-46.65585528448967!3d-23.55018028469853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a35a63d779%3A0x63351915995b05a6!2sAv.%20Paulista%2C%201578%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001311-200!5e0!3m2!1spt-BR!2sbr!4v1678225588775!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="assets/images/logotipo.png" alt="Laser Excellence Logo" style="max-height: 40px; margin-bottom: 15px;">
+                <h3>Laser Excellence | Marcela F. Molinaro</h3>
+                <p>Enfermagem Especializada Coren/SP 456789</p>
+                <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP (Atendimento Presencial e Home Care)</p>
+                <p><i class="fab fa-whatsapp"></i> Contato para Agendamento: (11) 98765-4321</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tratamentos.html">Protocolos</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Agendamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-legal">
+                <h4>Jurídico</h4>
+                <ul>
+                    <li><a href="politica-privacidade.html">Política de Privacidade (LGPD)</a></li>
+                    <li><a href="termos-uso.html">Termos de Uso</a></li>
+                    <li><a onclick="document.getElementById('cookie-banner').style.display = 'block';">Revisar Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2025 Laser Excellence | Marcela F. Molinaro. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/futuristic-3d.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/tracking.js"></script>
+
+    <script>
+        // Função de Submissão do Formulário (Dispara rastreamento antes da submissão Formspree)
+        function handleFormSubmission(event, actionName) {
+            // 1. DISPARA O EVENTO DE CONVERSÃO para GA4/Meta Pixel
+            if (typeof gtag === 'function') { 
+                gtag('event', 'lead_form', { 'event_label': actionName });
+            }
+            if (typeof fbq === 'function') { 
+                fbq('track', 'Lead', { content_name: actionName });
+            }
+            
+            // O Formspree/Netlify cuida da submissão POST e do redirecionamento
+            console.log(`[CONVERSÃO] Tracking disparado. Formulário será submetido.`);
+            // Retorna true para permitir o envio do formulário
+            return true;
+        }
+        
+        // Lógica simples de Menu Mobile
+        document.querySelector('.menu-mobile-btn').addEventListener('click', function() {
+            document.querySelector('.menu-desktop').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
