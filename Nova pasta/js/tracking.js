@@ -1,26 +1,21 @@
 // Salve este arquivo como js/tracking.js
+// O rastreamento agora é feito pelo Google Tag Manager (GTM)
+// O GTM irá respeitar o Consentimento de Cookies do usuário.
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Função para disparar eventos para GA4 e Meta Pixel
+    // Função para disparar eventos APENAS para o Google Tag Manager (GTM)
     function trackEvent(eventName, eventLabel) {
-        // Rastreamento GA4
-        if (typeof gtag === 'function') {
-            gtag('event', eventName, {
-                'event_label': eventLabel,
-                'method': 'Click'
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                'event': 'custom_event', // Nome do evento que será capturado no GTM
+                'event_name': eventName, // Nome do evento real (e.g., 'whatsapp_click')
+                'event_label': eventLabel, // Label/Detalhe do evento
+                'event_category': 'Engagement' // Categoria (pode ser ajustada no GTM)
             });
-            console.log(`[GA4 Tracked] Evento: ${eventName}, Label: ${eventLabel}`);
-        }
-
-        // Rastreamento Meta Pixel
-        if (typeof fbq === 'function') {
-            // Usa 'Lead' como evento padrão para CTAs importantes
-            fbq('track', 'Lead', {
-                content_name: eventLabel,
-                content_category: eventName
-            });
-            console.log(`[Meta Tracked] Evento: Lead, Content: ${eventLabel}`);
+            console.log(`[GTM Tracked] Evento: ${eventName}, Label: ${eventLabel}`);
+        } else {
+            console.warn(`[GTM ERROR] dataLayer não encontrado para rastrear ${eventName}.`);
         }
     }
 
@@ -48,8 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const legalLinks = document.querySelectorAll('.footer-legal a');
     legalLinks.forEach(link => {
         link.addEventListener('click', () => {
-            const label = link.textContent.trim().replace(/\s/g, '_');
-            trackEvent('nav_click', `Footer_${label}`);
+            const label = link.textContent.trim();
+            trackEvent('legal_click', `Link_${label}`);
         });
     });
+
 });
